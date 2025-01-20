@@ -103,7 +103,7 @@ public class BatchConfig {
         return new JdbcBatchItemWriterBuilder<Transacao>()
                 .dataSource(dataSource)
                 .sql("""
-                        INSERT INTO transacao (
+                        INSERT INTO transacoes (
                             tipo, data, valor, cpf, cartao, hora, dono_loja, nome_loja
                         ) VALUES (
                             :tipo, :data, :valor, :cpf, :cartao, :hora, :donoDaLoja, :nomeDaLoja
@@ -113,8 +113,4 @@ public class BatchConfig {
                 .build();
     }
 
-//    @Bean
-//    public ItemReader<CurrencyResponse> itemReader() {
-//        return new ItemReaderCustom(awesomeClient, currencyList);
-//    }
 }
